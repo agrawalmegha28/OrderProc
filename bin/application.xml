@@ -1,0 +1,13 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"  
+            "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- add your bean definitions here! -->
+	<bean id="acctServiceIntlRules" class="npu.services.AccountingServiceIntlRules"/>
+	<bean id="acctServiceFasbRule" class="npu.services.AccountingServiceFasbRule"/>
+	<bean id="myInventoryService" class="npu.services.MyInventoryService"/>
+	
+	<bean id="orderProcBean" class="npu.services.OrderProcessor" >
+	    <property name= "acctService" ref="acctServiceFasbRule" />
+		<property name="invService" ref="myInventoryService" />
+	</bean>	
+</beans>
